@@ -1,0 +1,25 @@
+.container
+  .row
+    .twelve.columns
+      %a.nice.medium.blue.radius.button{:"data-reveal-id" => "addAnotherProject"} Add Another Project
+      %hr
+  .row
+    .twelve.columns
+      -12.times.each_with_index do |i, index|
+        =content_tag :div, :class => "project #{last_in_line(index+1)}" do
+          =image_tag "//placehold.it/214x214&text=#{(index+1)%4}"
+
+#addAnotherProject.reveal-modal
+  %h3 Tell me about the project
+  %form.nice
+    %label
+      %strong What's the name of the project?
+      %input.input-text.large{:placeholder => "Redding Power Plant ..."}
+    %label
+      %strong Where was the project take place?
+      %input.input-text.large{:placeholder => "Redding, CA"}
+    %label
+      %strong What types of screens were used?
+      %input.input-text.large{:placeholder => "2 ISI C-44"}
+    %a.nice.small.blue.radius.button Create Project
+  %a.close-reveal-modal &#215;

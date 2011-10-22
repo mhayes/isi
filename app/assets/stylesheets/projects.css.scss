@@ -1,0 +1,11 @@
+.project {
+  border:1px solid #ccc; 
+  float:left; 
+  padding:10px;
+  margin-right:12px;
+  margin-bottom:12px;
+}
+
+.project.last-in-line {
+  margin-right:0px;
+}

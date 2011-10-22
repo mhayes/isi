@@ -1,0 +1,14 @@
+.container
+  .row
+    #navigation.twelve.columns
+      %dl.nice.contained.tabs.mobile
+        %dd
+          =active_link_to "Home", root_path
+        %dd
+          =active_link_to "Projects", projects_path, :active => /projects/i
+        %dd
+          =active_link_to "Technology", technology_brushed_cylinder_path, :active => /technology/i
+        %dd
+          =active_link_to "Design Info", design_criteria_path, :active => /design/i
+        %dd
+          =active_link_to "Company", company_about_path, :active => /company/i

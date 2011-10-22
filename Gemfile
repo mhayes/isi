@@ -5,6 +5,7 @@ gem 'zurb-foundation'
 gem 'haml-rails'
 gem 'devise'
 gem 'cancan'
+gem 'active_link_to'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
