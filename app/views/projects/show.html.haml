@@ -1,0 +1,22 @@
+-content_for :js_variables do
+  :javascript
+    var ISI = {};
+    ISI.upload_url = "#{project_slides_path(@project)}";
+    ISI.multipart_params = {
+      '#{request_forgery_protection_token}': '#{form_authenticity_token}',
+      '#{request.session_options[:key]}': '#{request.session_options[:id]}'
+    }
+
+.container
+  .row
+    .twelve.columns
+      %a#addPhotos.nice.medium.blue.radius.button Add Photos
+      %hr
+      
+  .row
+    .twelve.columns
+      %h2= @project.name
+      
+      -@slides.each_with_index do |slide, index|
+        =content_tag_for :div, slide, :class => "project #{last_in_line(index+1)}" do
+          =image_tag slide.image.url(:thumb)
