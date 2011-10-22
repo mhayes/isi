@@ -10,7 +10,9 @@
     .container
       .row
         .twelve.columns
-          %h1 Intake Screens, Inc.
+          #header
+            =image_tag "/static/logo.png", :id => "logo"
+            %h1 Intake Screens, Inc.
     =render "navigation_bar"
     =yield
     =render "footer"
