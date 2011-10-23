@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  has_many :slides
+  has_many :slides, :dependent => :destroy
   
   def cover_image
     return "//placehold.it/214x214" if self.slides.empty?

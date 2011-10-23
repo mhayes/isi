@@ -13,5 +13,10 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @slides = @project.slides
   end
+  
+  def destroy
+    @project = Project.find(params[:id])
+    @project.destroy
+  end
 
 end

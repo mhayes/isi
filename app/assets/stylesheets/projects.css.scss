@@ -9,3 +9,13 @@
 .project.last-in-line {
   margin-right:0px;
 }
+
+.project {
+  position:relative;
+}
+
+.project .trash {
+  position:absolute;
+  top:195px;
+  right:13px;
+}

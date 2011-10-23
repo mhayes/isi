@@ -6,10 +6,11 @@
   .row
     .twelve.columns
       -@projects.each_with_index do |project, index|
-        =link_to project do
-          =content_tag_for :div, project, :class => "#{last_in_line(index+1)}" do
+        =content_tag_for :div, project, :class => "#{last_in_line(index+1)}" do
+          =link_to project do
             =image_tag project.cover_image
-            %h6= project.name
+          .trash=link_to "Destroy", project, :method => :delete, :remote => true, :confirm => "Do you really want to remove this project?"
+          %h6= project.name
 
 #addAnotherProject.reveal-modal
   %h3 Tell me about the project

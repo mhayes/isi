@@ -11,6 +11,7 @@
   .row
     .twelve.columns
       %a#addPhotos.nice.medium.blue.radius.button Add Photos
+      .loading.right
       %hr
       
   .row
@@ -20,3 +21,4 @@
       -@slides.each_with_index do |slide, index|
         =content_tag_for :div, slide, :class => "project #{last_in_line(index+1)}" do
           =image_tag slide.image.url(:thumb)
+          .trash= link_to "Destroy", project_slide_path(@project, slide), :method => :delete, :remote => true, :confirm => "Do you really want to remove this photo?"

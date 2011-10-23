@@ -18,13 +18,24 @@ uploadPhotos =
     
     uploader.bind "QueueChanged", ->
       uploader.start()
+    
+    uploader.bind "UploadFile", ->
+      $(".loading").show()
 
     uploader.bind "FileUploaded", ->
       console.info "File was uploaded ..."
 
     uploader.bind "UploadComplete", ->
+      $(".loading").hide()
       location.reload(true)
 
 jQuery ->
-  if ISI.upload_url?
+  if ISI? && ISI.upload_url?
     uploadPhotos.init()
+  
+  $(".project").mouseover ->
+    $("img", this).css("opacity", 0.8)
+    $(".trash a", this).css("display", "block")
+  $(".project").mouseleave ->
+      $("img", this).css("opacity", 1.0)
+      $(".trash a", this).css("display", "none")

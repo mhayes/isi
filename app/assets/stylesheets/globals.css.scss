@@ -12,3 +12,20 @@
   #logo {position:absolute; left:0px; top:10px;}
   h1 {position:absolute; left:90px; top:20px; font-size:28px;}
 }
+
+.loading {
+  display:none;
+  background: image-url("ajax-loader.gif");
+  width:16px;
+  height:16px;
+}
+
+.trash a {
+  display:none;
+  background: image-url("trash.png") no-repeat;
+  width:24px;
+  height:24px;
+  text-indent:-9999px;
+}
+
+.right {float:right;}

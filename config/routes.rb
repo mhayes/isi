@@ -4,8 +4,8 @@ Isi::Application.routes.draw do
   devise_for :admins
   
   root :to => "index#home"
-  resources :projects, :only => [:index, :create, :show] do
-    resources :slides, :only => [:create]
+  resources :projects, :only => [:index, :create, :show, :destroy] do
+    resources :slides, :only => [:create, :destroy]
   end
   
   get "/design/criteria" => "design#criteria"
